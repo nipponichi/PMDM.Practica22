@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Practica22</string>
+    <string name="password">Contraseña</string>
+    <string name="user">Usuario</string>
+    <string name="btnEntrar">Entrar</string>
+    <string name="btnMedicion">Medición de Temperatura</string>
+    <string name="btnConversor">Conversor</string>
+    <string name="btnConfiguracion">Configuración</string>
+    <string name="btnCerraSesion">Cerrar Sesion</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="temperatura">Temperatura</string>
+    <string name="poblacion">Población</string>
+    <string name="provincia">Provincia</string>
+    <string name="rbCelsius">Celsius</string>
+    <string name="rbFahrenheit">Fahrenheit</string>
+    <string name="btnMenu">Menu</string>
+    <string name="btnGuardar">Guardar</string>
+</resources>
