@@ -12,7 +12,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Temperatura extends AppCompatActivity {
+public class
+Temperatura extends AppCompatActivity {
 
     private String nombre, apellidos, temperatura, poblacion,provincia;
     private TextView tvNombre, tvApellidos, tvGrados, tvPoblacion, tvProvincia;
@@ -33,6 +34,7 @@ public class Temperatura extends AppCompatActivity {
         btnMenu.setOnClickListener(goToMenu);
     }
 
+    //Tomamos valores del bundle
     private void getParameters(){
         nombre = getIntent().getExtras().getString("nombre");
         apellidos = getIntent().getExtras().getString("apellidos");
@@ -53,6 +55,8 @@ public class Temperatura extends AppCompatActivity {
         btnMenu = findViewById(R.id.btnMenu);
         btnColor = findViewById(R.id.btnColor);
     }
+
+    //Escribe variables en pantalla
     private void setParameters(){
         tvNombre.setText(nombre);
         tvApellidos.setText(apellidos);
@@ -62,6 +66,7 @@ public class Temperatura extends AppCompatActivity {
 
     }
 
+    //Cambio color boton segun temperatura
     private void changeButtonColor(String temperatura, boolean celsius, boolean fahrenheit){
         int temp = Integer.valueOf(temperatura);
         if ((temp > 38 && celsius) || (temp > 100 && fahrenheit)) {

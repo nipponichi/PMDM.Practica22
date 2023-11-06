@@ -15,13 +15,13 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        addVariables();
+        setVariables();
         btnMedicionTemp.setOnClickListener(doTempChecking);
         btnConversor.setOnClickListener(doConversion);
         btnConfiguracion.setOnClickListener(doConfiguration);
         btnCerrarSesion.setOnClickListener(doCloseSesion);
     }
-    private void addVariables(){
+    private void setVariables(){
         btnMedicionTemp = findViewById(R.id.btnMedicionTemperatura);
         btnConversor = findViewById(R.id.btnConversor);
         btnConfiguracion = findViewById(R.id.btnConfiguracion);
@@ -29,6 +29,8 @@ public class Menu extends AppCompatActivity {
     }
 
     Intent intent;
+
+    //Va a MedicionTemperatura
    private final View.OnClickListener doTempChecking = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -37,6 +39,7 @@ public class Menu extends AppCompatActivity {
         }
     };
 
+   //Va a Conversor
     private final View.OnClickListener doConversion = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -44,6 +47,8 @@ public class Menu extends AppCompatActivity {
             startActivity(intent);
         }
     };
+
+    //Va a Configuracion
     private final View.OnClickListener doConfiguration = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -52,6 +57,7 @@ public class Menu extends AppCompatActivity {
         }
     };
 
+    //Vuelve a login
     private final View.OnClickListener doCloseSesion = new View.OnClickListener() {
         @Override
         public void onClick(View view) {

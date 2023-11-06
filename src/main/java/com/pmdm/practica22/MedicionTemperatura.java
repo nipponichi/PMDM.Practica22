@@ -27,7 +27,7 @@ public class MedicionTemperatura extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicion_temperatura);
-        addVariables();
+        setVariables();
         btnFinalizar.setOnClickListener(doEnd);
     }
 
@@ -51,6 +51,7 @@ public class MedicionTemperatura extends AppCompatActivity {
         }
     };
 
+    //Crea bundle e introduce valores de todos los campos
     private Bundle generateBundle(String nombre, String apellidos, String temperatura,
                                 String poblacion, String provincia, Boolean celsius, Boolean fahrenheit){
         Bundle bundle = new Bundle();
@@ -63,7 +64,7 @@ public class MedicionTemperatura extends AppCompatActivity {
         bundle.putBoolean("fahrenheit",fahrenheit);
         return bundle;
     }
-    private void addVariables(){
+    private void setVariables(){
         etNombre = findViewById(R.id.etNombre);
         etApellidos = findViewById(R.id.etApellidos);
         etTemperatura = findViewById(R.id.etTemperatura);
@@ -74,8 +75,10 @@ public class MedicionTemperatura extends AppCompatActivity {
         rbFahrenheit = findViewById(R.id.rbFahrenheit);
     }
 
+    //Control de errores de formulario
     private boolean checkForm(String nombre, String apellidos, String temperatura,
                            String poblacion, String provincia) {
+
         if ("".equals(nombre) || "".equals(apellidos) || "".equals(temperatura)
                 || "".equals(poblacion) || "".equals(provincia)){
             Toast.makeText(this,"Por favor, rellena todos los campos", Toast.LENGTH_SHORT).show();

@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        //Login
         private boolean isValidUser(String user, String password){
             etUser.setError(null);
             etPassword.setError(null);

@@ -6,25 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".MedicionTemperatura">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        app:srcCompat="@drawable/logo_app_res"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tvMedicionTemperatura" />
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/constraint2"
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toEndOf="@id/constraint1"
+       app:layout_constraintEnd_toEndOf="parent">
 
     <TextView
         android:id="@+id/tvMedicionTemperatura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/btnMedicion"
-        app:layout_constraintTop_toBottomOf="@id/imageView3"
-        app:layout_constraintBottom_toTopOf="@id/etNombre"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        app:srcCompat="@drawable/logo_app_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvMedicionTemperatura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnFinalizar"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btnFinalizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finalizar"
+        app:layout_constraintTop_toBottomOf="@id/imageView3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toStartOf="@id/constraint2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
 
     <EditText
         android:text="Javier"
@@ -32,7 +64,7 @@
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:hint="@string/nombre"
-        app:layout_constraintTop_toBottomOf="@id/tvMedicionTemperatura"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/etApellidos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -78,7 +110,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/provincia"
         app:layout_constraintTop_toBottomOf="@id/etPoblacion"
-        app:layout_constraintBottom_toTopOf="@+id/rgSelector"
+        app:layout_constraintBottom_toTopOf="@id/rgSelector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"  />
 
@@ -86,7 +118,7 @@
         android:id="@+id/rgSelector"
         android:layout_width="270dp"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etProvincia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -106,14 +138,6 @@
             android:checked="false" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/btnFinalizar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Finalizar"
-        app:layout_constraintTop_toBottomOf="@id/rgSelector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,6 +33,7 @@ public class Conversor extends AppCompatActivity {
         btnCalcular2.setOnClickListener(calcularFC);
     }
 
+    //Calculo Celsius a Fahrenheit
     private final View.OnClickListener calcularCF = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -43,6 +44,7 @@ public class Conversor extends AppCompatActivity {
         }
     };
 
+    //Calculo Fahrenheit a Celsius
     private final View.OnClickListener calcularFC = new View.OnClickListener() {
         @Override
         public void onClick(View view) {

@@ -35,7 +35,7 @@ public class Configuracion extends AppCompatActivity {
         swCelsius.setOnClickListener(celsiusActivo);
     }
 
-
+    //Volver al menu principal
     private final View.OnClickListener goToMenu = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -44,20 +44,28 @@ public class Configuracion extends AppCompatActivity {
         }
     };
 
+    //Al menos un switch debe estar en modo true
     private final View.OnClickListener celsiusActivo = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             if(swCelsius.isChecked()){
                 swFahrenheit.setChecked(false);
             }
+            if(!swCelsius.isChecked()){
+                swFahrenheit.setChecked(true);
+            }
         }
     };
 
+    //Al menos un switch debe estar en modo true
     private final View.OnClickListener fahrenheitActivo = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             if(swFahrenheit.isChecked()){
                 swCelsius.setChecked(false);
+            }
+            if(!swFahrenheit.isChecked()){
+                swCelsius.setChecked(true);
             }
         }
     };
